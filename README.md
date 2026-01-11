@@ -372,28 +372,138 @@ python reset_db.py
 
 ## 🚀 Deployment
 
+### 🌐 Live Demo
+
+**🔗 Frontend (React):** [Your App URL Here]  
+**� BackeUnd (FastAPI):** [Your API URL Here]  
+**📚 API Documentation:** [Your API URL]/docs
+
+### ☁️ Deployment Options
+
+<div align="center">
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sunbyte16/fastapi-react-auth)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sunbyte16/fastapi-react-auth)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sunbyte16/fastapi-react-auth)
+
+</div>
+
+### 🎯 Quick Deploy Steps
+
+#### **Option 1: Netlify (Frontend) + Heroku (Backend)**
+
+**Deploy Backend to Heroku:**
+```bash
+# 1. Create Heroku app
+heroku create your-app-name-api
+
+# 2. Set environment variables
+heroku config:set SECRET_KEY=your-super-secret-key-here
+heroku config:set ALGORITHM=HS256
+heroku config:set ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# 3. Deploy backend
+git subtree push --prefix backend heroku main
+```
+
+**Deploy Frontend to Netlify:**
+```bash
+# 1. Build the frontend
+cd frontend
+npm run build
+
+# 2. Deploy to Netlify (drag & drop build folder)
+# Or connect your GitHub repo to Netlify
+```
+
+#### **Option 2: Vercel (Full Stack)**
+
+```bash
+# 1. Install Vercel CLI
+npm i -g vercel
+
+# 2. Deploy
+vercel --prod
+
+# 3. Set environment variables in Vercel dashboard
+```
+
+#### **Option 3: Railway (Backend) + Netlify (Frontend)**
+
+```bash
+# 1. Connect GitHub repo to Railway
+# 2. Deploy backend automatically
+# 3. Deploy frontend to Netlify
+```
+
+### 🔧 Environment Variables
+
+**Backend (.env):**
+```env
+SECRET_KEY=your-super-secret-key-change-this-in-production
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+DATABASE_URL=sqlite:///./auth.db
+```
+
+**Frontend (.env):**
+```env
+REACT_APP_API_URL=https://your-backend-url.herokuapp.com
+GENERATE_SOURCEMAP=false
+```
+
 ### 🌐 Production Checklist
 
-- [ ] 🔑 Update `SECRET_KEY` in production
-- [ ] 🗄️ Use production database (PostgreSQL)
-- [ ] 🌐 Configure CORS for production domain
+- [ ] 🔑 Update `SECRET_KEY` with a strong secret
+- [ ] 🗄️ Use production database (PostgreSQL recommended)
+- [ ] 🌐 Update CORS origins in `main.py`
 - [ ] 🔒 Enable HTTPS
 - [ ] 📊 Add logging and monitoring
 - [ ] 🚦 Implement rate limiting
 - [ ] 🔄 Set up CI/CD pipeline
 - [ ] 📈 Configure analytics
 
-### ☁️ Deployment Options
+### 🔗 Custom Domain Setup
 
-<div align="center">
+**For Netlify:**
+1. Go to Domain settings
+2. Add your custom domain
+3. Configure DNS records
 
-[![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://heroku.com)
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
-[![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://netlify.com)
-[![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com)
-[![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=for-the-badge&logo=digitalocean&logoColor=white)](https://digitalocean.com)
+**For Vercel:**
+1. Go to Project settings
+2. Add domain in Domains section
+3. Update DNS records
 
-</div>
+### 🐛 Deployment Troubleshooting
+
+**Common Issues:**
+
+1. **CORS Errors:**
+   ```python
+   # Update backend/main.py
+   app.add_middleware(
+       CORSMiddleware,
+       allow_origins=["https://your-frontend-domain.com"],
+       allow_credentials=True,
+       allow_methods=["*"],
+       allow_headers=["*"],
+   )
+   ```
+
+2. **API URL Issues:**
+   ```javascript
+   // Update frontend API calls
+   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+   ```
+
+3. **Build Errors:**
+   ```bash
+   # Clear cache and reinstall
+   rm -rf node_modules package-lock.json
+   npm install
+   npm run build
+   ```
 
 ## 🤝 Contributing
 
@@ -450,7 +560,11 @@ If this project helped you, consider buying me a coffee! ☕
 
 *"Building the future, one line of code at a time"* 🚀
 
-</div>#   A u t h e n t i c a t i o n - S y s t e m  
- #   A u t h e n t i c a t i o n - S y s t e m  
+</div>#   A u t h e n t i c a t i o n - S y s t e m 
+ 
+ #   A u t h e n t i c a t i o n - S y s t e m 
+ 
+ #   A u t h e n t i c a t i o n - S y s t e m 
+ 
  #   A u t h e n t i c a t i o n - S y s t e m  
  
